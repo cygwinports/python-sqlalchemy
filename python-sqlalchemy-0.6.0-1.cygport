@@ -1,0 +1,7 @@
+ORIG_PN="SQLAlchemy"
+inherit distutils
+
+
+HOMEPAGE="http://www.sqlalchemy.org/"
+
+PATCH_URI="0.6.0-fix-warning.patch"

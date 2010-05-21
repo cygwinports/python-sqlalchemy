@@ -1,0 +1,19 @@
+http://bugs.gentoo.org/show_bug.cgi?id=317555
+
+--- origsrc/SQLAlchemy-0.6.0/lib/sqlalchemy/engine/threadlocal.py	2010-04-18 18:10:45.000000000 -0500
++++ src/SQLAlchemy-0.6.0/lib/sqlalchemy/engine/threadlocal.py	2010-05-21 17:06:40.806277000 -0500
+@@ -74,10 +74,14 @@ class TLEngine(base.Engine):
+         self._connections.trans[-1].prepare()
+         
+     def commit(self):
++        if len(self._connections.trans) == 0:
++            return
+         trans = self._connections.trans.pop(-1)
+         trans.commit()
+         
+     def rollback(self):
++        if len(self._connections.trans) == 0:
++            return
+         trans = self._connections.trans.pop(-1)
+         trans.rollback()
+     
