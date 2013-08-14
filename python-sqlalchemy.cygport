@@ -2,7 +2,7 @@ ORIG_PN="SQLAlchemy"
 inherit distutils
 
 NAME="python-sqlalchemy"
-VERSION=0.7.9
+VERSION=0.8.2
 RELEASE=1
 CATEGORY="Python"
 SUMMARY="Python SQL library"
