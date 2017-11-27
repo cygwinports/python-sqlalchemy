@@ -1,8 +1,8 @@
 ORIG_PN="SQLAlchemy"
-inherit distutils
+inherit python-wheel
 
 NAME="python-sqlalchemy"
-VERSION=0.8.2
+VERSION=1.1.15
 RELEASE=1
 CATEGORY="Python"
 SUMMARY="Python SQL library"
